@@ -28,6 +28,8 @@ namespace DevIO.App
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllersWithViews();
+
+            services.AddAutoMapper(typeof(Startup));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
 
             services.AddScoped<MyDbContext>();
